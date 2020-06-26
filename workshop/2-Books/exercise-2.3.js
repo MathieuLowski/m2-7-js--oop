@@ -3,7 +3,45 @@
 // Paste them right here:
 
 // Exercise 2.3
-//
+class Book {
+  constructor (title, genre, author, isRead) {
+    this.title = title;
+    this.genre = genre;
+    this.author = author;
+    this.isRead = isRead || false ;
+  }
+}
+class BookList {
+  constructor () {
+    this.books = [];
+    this.lastRead = null;
+    this.currentlyReading = null;
+}
+add = (book) =>{
+      this.books.push(book);
+}
+
+getNumRead = () =>{ 
+    let numRead = 0;
+    this.books.forEach((book) => {
+      if (book.isRead === true) {
+        numRead++;
+      }
+    });
+  return numRead;
+};
+getNumUnread = () => {
+  let unread = 0;
+  this.books.forEach((book)=>{
+    if (book.isRead===false){
+      unread++;
+    }
+    });
+  return unread;
+};
+
+}
+
 // We want to be able to add books to our BookList, so that we can start a
 // collection!
 //

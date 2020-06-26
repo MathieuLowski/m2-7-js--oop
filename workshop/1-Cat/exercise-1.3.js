@@ -8,6 +8,29 @@
 //    modify the various porperties of a cat.
 //    Write methods that will update tiredness, hunger, loneliness, and
 //    happiness.
+class Cat {
+        constructor(name, breed){
+        this.species = 'cat';
+        this.name= name || 'unknown';
+        this.breed = breed || 'unknown';
+        this.tiredness = 50;
+        this.hunger = 20;
+        this.loneliness = 20;
+        this.hapiness  = 20;
+}
+sleep = (hours) =>{
+        this.tiredness -= hours*5;
+        this.hapiness += 5
+}
+eat = (kibbles) => {
+        this.hunger -= kibbles/5;
+        this.hapiness += 10;
+}
+play = (minutes) => {
+        this.loneliness -= minutes*3;
+        this.hapiness += 7;
+}
+}
 
 // HINT: You need to write arrow functions here. () => {}
 // - Write a sleep method that accept hours and reduces tiredness by 5 times
@@ -22,3 +45,8 @@
 // You decide how much sleep, eat, and play affects your cat's happiness.
 
 // B) call the different methods with appropriate values and then console.log boots to see what happened to the property values.
+let boots = new Cat('Boots', 'Simease');
+console.log(boots);
+boots.sleep(5);
+boots.eat(15);
+console.log(boots);
